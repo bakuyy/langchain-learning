@@ -77,6 +77,18 @@ print(f"Created {len(all_splits)} chunks with rich metadata")
 
 # convert this into embedding (numberical rep of its meaning)
 # stored in chroma vector db
+'''
+embeddings = dense numerical vector representations of data (i..e text) thjat capture semantic meaning in a mathematical form
+text->number: text chunks converted into vector of numbers representing semantic meaning
+-- similar content produces similar vectors (thus, closer in vector space)
+-- relationships are preserved mathematically
+
+i.e: joyful and happy are close while joyful and chopsticks are not
+
+openaiembeddings is a class in langchain that provides an interface to openais embeddings models
+-- once authenticated/processed - it takes in input, and then the model will process the text through neural networks to return a vector
+
+'''
 embeddings = OpenAIEmbeddings()
 vector_db = Chroma.from_documents(
     documents=all_splits,
